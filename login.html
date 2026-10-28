@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <meta name="theme-color" content="#f5f8f5"/>
+  <title>Sign in | VitalPulse Wellness</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/>
+  <link rel="stylesheet" href="assets/site-global.css"/>
+  <link rel="icon" type="image/svg+xml" href="assets/vitalpulse-favicon.svg"/>
+  <style>
+    :root{color-scheme:light}
+    *{box-sizing:border-box}
+    body.login-page{min-height:100vh;margin:0;background:#f5f8f5;color:#203a32}
+    .login-layout{min-height:100vh;display:grid;grid-template-columns:minmax(420px,.92fr) 1.08fr}
+    .brand-panel{position:relative;isolation:isolate;display:flex;min-height:100vh;flex-direction:column;justify-content:space-between;overflow:hidden;padding:clamp(32px,5vw,76px);background:linear-gradient(145deg,#123c32 0%,#155545 54%,#0e4439 100%);color:#f5fbf7}
+    .brand-panel:before,.brand-panel:after{position:absolute;z-index:-1;content:"";border:1px solid rgba(213,245,229,.14);border-radius:50%;pointer-events:none}
+    .brand-panel:before{width:620px;height:620px;right:-285px;top:16%;box-shadow:0 0 0 46px rgba(213,245,229,.035),0 0 0 100px rgba(213,245,229,.025)}
+    .brand-panel:after{width:430px;height:430px;right:-190px;top:24%;background:radial-gradient(circle at 35% 35%,rgba(142,224,188,.18),rgba(142,224,188,0) 68%)}
+    .brand-logo{display:inline-flex;align-items:center;gap:12px;width:max-content;color:inherit;text-decoration:none}
+    .brand-name{display:block;font:700 26px/1.15 "Plus Jakarta Sans",sans-serif;letter-spacing:-.035em}
+    .brand-caption{display:block;margin-top:2px;color:#b4d6c6;font:600 14px/1.3 "Inter",sans-serif;letter-spacing:0}
+    .brand-copy{position:relative;max-width:520px;margin:70px 0 50px}
+    .brand-eyebrow{display:inline-flex;align-items:center;gap:9px;color:#b8e5cf;font-size:12px;font-weight:700;letter-spacing:.14em;text-transform:uppercase}
+    .brand-eyebrow:before{width:22px;height:1px;background:#8dd5b0;content:""}
+    .brand-copy h1{max-width:500px;margin:23px 0 18px;color:#f7fbf8;font:600 clamp(38px,5vw,64px)/1.08 "Plus Jakarta Sans",sans-serif;letter-spacing:-.055em}
+    .brand-copy p{max-width:410px;margin:0;color:#c3dbcd;font-size:16px;line-height:1.8}
+    .brand-points{display:grid;gap:15px;margin:34px 0 0;padding:0;list-style:none}
+    .brand-points li{display:flex;align-items:center;gap:12px;color:#e1efe6;font-size:14px}
+    .point-icon{display:grid;width:26px;height:26px;flex:none;place-items:center;border:1px solid rgba(182,230,202,.28);border-radius:50%;color:#a7e1bd}
+    .point-icon svg{width:13px;height:13px}
+    .brand-foot{display:flex;align-items:center;gap:8px;color:#a7c8b5;font-size:12px}
+    .brand-foot svg{width:15px;height:15px}
+    .form-panel{display:flex;min-height:100vh;flex-direction:column;align-items:center;justify-content:center;padding:28px clamp(24px,7vw,110px);background:radial-gradient(ellipse at 48% 45%,#fff 0%,#fff 35%,#f5f8f5 100%)}
+    .form-topbar{position:absolute;top:34px;right:clamp(24px,5vw,72px);display:flex;align-items:center;gap:20px}
+    .top-link{color:#677a70;font-size:13px;font-weight:600;text-decoration:none;transition:color .18s ease}
+    .top-link:hover{color:#1d5141}
+    .form-wrap{width:min(100%,410px);padding:26px 0}
+    .form-overline{margin:0 0 13px;color:#32806a;font-size:12px;font-weight:700;letter-spacing:.13em;text-transform:uppercase}
+    .form-wrap h2{margin:0;color:#1b352d;font:700 clamp(30px,4vw,38px)/1.2 "Plus Jakarta Sans",sans-serif;letter-spacing:-.045em}
+    .form-subtitle{margin:12px 0 30px;color:#687a71;font-size:15px;line-height:1.7}
+    .setup-note{display:flex;align-items:flex-start;gap:12px;margin:0 0 24px;padding:14px 15px;border:1px solid #dce9df;border-radius:10px;background:#f1f7f2;color:#536b5d;font-size:13px;line-height:1.6}
+    .setup-note svg{width:18px;height:18px;flex:none;margin-top:1px;color:#3d8064}
+    .login-fields{display:grid;gap:19px}
+    .field-label{display:flex;align-items:center;justify-content:space-between;margin-bottom:8px;color:#31483d;font-size:13px;font-weight:600}
+    .field-hint{color:#89978f;font-size:11px;font-weight:500}
+    .input-wrap{position:relative}
+    .field-input{display:block;width:100%;height:52px;padding:0 15px;border:1px solid #d8e2da;border-radius:9px;background:#fff;color:#233d33;font:400 14px "Inter",sans-serif;transition:border-color .18s ease,box-shadow .18s ease}
+    .field-input::placeholder{color:#a2aea6}
+    .field-input:hover{border-color:#aabdb0}
+    .field-input:focus{border-color:#367963;outline:0;box-shadow:0 0 0 3px rgba(54,121,99,.13)}
+    .password-input{padding-right:52px}
+    .password-toggle{position:absolute;top:50%;right:7px;display:grid;width:38px;height:38px;transform:translateY(-50%);place-items:center;border:0;border-radius:7px;background:transparent;color:#788a7e;cursor:pointer;transition:background .18s ease,color .18s ease}
+    .password-toggle:hover{background:#f0f5f1;color:#315d4a}
+    .password-toggle:focus-visible,.top-link:focus-visible,.brand-logo:focus-visible{outline:2px solid #33836b;outline-offset:3px;border-radius:4px}
+    .password-toggle svg{width:19px;height:19px}
+    .form-options{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-top:-2px}
+    .remember-option{display:inline-flex;align-items:center;gap:9px;color:#62736a;font-size:13px;cursor:pointer}
+    .remember-option input{width:15px;height:15px;margin:0;accent-color:#28634f}
+    .help-link{color:#28705a;font-size:13px;font-weight:600;text-decoration:none}
+    .help-link:hover{text-decoration:underline;text-underline-offset:3px}
+    .login-submit{display:flex;width:100%;height:52px;align-items:center;justify-content:center;gap:10px;margin-top:3px;border:0;border-radius:9px;background:#28634f;color:#fff;font:600 14px "Inter",sans-serif;cursor:pointer;box-shadow:0 5px 12px rgba(28,82,62,.13);transition:background .18s ease,box-shadow .18s ease,transform .18s ease}
+    .login-submit:hover{transform:translateY(-1px);background:#1d5141;box-shadow:0 8px 18px rgba(28,82,62,.2)}
+    .login-submit:active{transform:translateY(0)}
+    .login-submit:focus-visible{outline:3px solid rgba(54,121,99,.3);outline-offset:3px}
+    .login-submit svg{width:17px;height:17px}
+    .login-status{min-height:20px;margin:11px 0 0;color:#9c573d;font-size:12px;line-height:1.6}
+    .form-divider{display:flex;align-items:center;gap:14px;margin:20px 0;color:#99a69e;font-size:11px}
+    .form-divider:before,.form-divider:after{height:1px;flex:1;background:#e4ebe5;content:""}
+    .security-note{display:flex;align-items:center;justify-content:center;gap:7px;color:#87968d;font-size:11px}
+    .security-note svg{width:14px;height:14px;color:#51846c}
+    .mobile-brand{display:none}
+    @media(max-width:900px){
+      .login-layout{grid-template-columns:minmax(320px,.85fr) 1.15fr}
+      .brand-panel{padding:36px}
+      .form-panel{padding:28px 40px}
+      .form-topbar{top:24px;right:32px}
+    }
+    @media(max-width:680px){
+      body.login-page{min-height:100svh}
+      .login-layout{min-height:100svh;grid-template-columns:1fr}
+      .brand-panel{display:none}
+      .form-panel{position:relative;min-height:100svh;justify-content:flex-start;padding:26px 24px 32px;background:#f7f9f7}
+      .form-topbar{top:32px;right:24px}
+      .mobile-brand{display:inline-flex;align-items:center;gap:9px;margin:0 0 66px;color:#203a32;text-decoration:none}
+      .mobile-brand span{display:block;color:#203a32;font:700 24px/1.15 "Plus Jakarta Sans",sans-serif;letter-spacing:-.035em}
+      .mobile-brand small{display:block;margin-top:2px;color:#28634f;font:600 14px/1.3 "Inter",sans-serif}
+      .form-wrap{margin:auto 0;width:min(100%,410px);padding:0}
+      .form-wrap h2{font-size:34px}
+      .form-subtitle{margin-bottom:24px}
+    }
+    @media(max-width:380px){
+      .form-panel{padding-right:18px;padding-left:18px}
+      .form-topbar{right:18px}
+      .form-options{align-items:flex-start}
+    }
+    @media(prefers-reduced-motion:reduce){
+      *,*:before,*:after{scroll-behavior:auto!important;transition-duration:.01ms!important;animation-duration:.01ms!important}
+    }
+  </style>
+</head>
+<body class="login-page">
+  <main class="login-layout">
+    <aside class="brand-panel" aria-label="VitalPulse Wellness">
+      <a class="brand-logo" href="index.html">
+        <span><span class="brand-name">VitalPulse</span><span class="brand-caption">Wellness 360</span></span>
+      </a>
+      <div class="brand-copy">
+        <span class="brand-eyebrow">Your wellness, in one place</span>
+        <h1>Healthier people.<br/>Stronger teams.</h1>
+        <p>Welcome to your workspace for practical wellbeing support, meaningful progress, and care that puts people first.</p>
+        <ul class="brand-points">
+          <li><span class="point-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Personalized wellbeing resources</li>
+          <li><span class="point-icon"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m5 12 4 4L19 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg></span>Support for every step forward</li>
+        </ul>
+      </div>
+      <div class="brand-foot">
+        <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M12 3 5 6v5c0 4.5 2.8 8.5 7 10 4.2-1.5 7-5.5 7-10V6l-7-3Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><path d="m9 12 2 2 4-4" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round"/></svg>
+        Your wellbeing information deserves care.
+      </div>
+    </aside>
+    <section class="form-panel" aria-labelledby="login-title">
+      <div class="form-topbar"><a class="top-link" href="index.html">Back to website <span aria-hidden="true">↗</span></a></div>
+      <a class="mobile-brand" href="index.html">
+        <span>VitalPulse<small>Wellness 360</small></span>
+      </a>
+      <div class="form-wrap">
+        <p class="form-overline">Member portal</p>
+        <h2 id="login-title">Welcome back</h2>
+        <p class="form-subtitle">Sign in to continue to your wellness workspace.</p>
+        <div class="setup-note" role="note">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><circle cx="12" cy="12" r="9" stroke="currentColor" stroke-width="1.7"/><path d="M12 11v5m0-8h.01" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+          <span>Sign-in is not available yet. An authentication provider must be connected before accounts can be accessed.</span>
+        </div>
+        <form class="login-fields" data-auth-form>
+          <div>
+            <label class="field-label" for="login-email">Work email <span class="field-hint">Use your organization email</span></label>
+            <input class="field-input" id="login-email" name="email" type="email" autocomplete="username" placeholder="name@company.com" required/>
+          </div>
+          <div>
+            <label class="field-label" for="login-password">Password</label>
+            <div class="input-wrap">
+              <input class="field-input password-input" id="login-password" name="password" type="password" autocomplete="current-password" placeholder="Enter your password" required/>
+              <button class="password-toggle" type="button" aria-label="Show password" aria-pressed="false">
+                <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M2.5 12s3.3-6 9.5-6 9.5 6 9.5 6-3.3 6-9.5 6-9.5-6-9.5-6Z" stroke="currentColor" stroke-width="1.7" stroke-linejoin="round"/><circle cx="12" cy="12" r="2.6" stroke="currentColor" stroke-width="1.7"/></svg>
+              </button>
+            </div>
+          </div>
+          <div class="form-options">
+            <label class="remember-option"><input type="checkbox" name="remember"/> Keep me signed in</label>
+            <a class="help-link" href="contact.html">Need help?</a>
+          </div>
+          <button class="login-submit" type="submit">Sign in
+            <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M5 12h14m-6-6 6 6-6 6" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </button>
+        </form>
+        <p class="login-status" id="login-status" role="status" aria-live="polite"></p>
+        <div class="form-divider">SECURE WELLNESS ACCESS</div>
+        <div class="security-note">
+          <svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><rect x="5" y="10" width="14" height="11" rx="2" stroke="currentColor" stroke-width="1.7"/><path d="M8 10V7a4 4 0 1 1 8 0v3" stroke="currentColor" stroke-width="1.7" stroke-linecap="round"/></svg>
+          Your privacy is central to your wellbeing.
+        </div>
+      </div>
+    </section>
+  </main>
+  <script>
+    const loginForm=document.querySelector("[data-auth-form]");
+    const passwordField=document.getElementById("login-password");
+    const passwordToggle=document.querySelector(".password-toggle");
+    passwordToggle.addEventListener("click",()=>{
+      const show=passwordField.type==="password";
+      passwordField.type=show?"text":"password";
+      passwordToggle.setAttribute("aria-label",show?"Hide password":"Show password");
+      passwordToggle.setAttribute("aria-pressed",String(show));
+    });
+    loginForm.addEventListener("submit",event=>{
+      event.preventDefault();
+      document.getElementById("login-status").textContent="Sign-in is not configured. Your details were not sent or stored.";
+    });
+  </script>
+</body>
+</html>

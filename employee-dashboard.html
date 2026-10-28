@@ -1,0 +1,510 @@
+<!DOCTYPE html>
+
+<html lang="en"><head><meta charset="utf-8"/><meta content="width=device-width, initial-scale=1.0" name="viewport"/><meta content="web_dashboard" name="shell-type"/><title>VitalPulse Wellness 360 - Portal</title><link href="https://fonts.googleapis.com" rel="preconnect"/><link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=Plus+Jakarta+Sans:wght@600;700&amp;display=swap" rel="stylesheet"/><link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/><style>@layer base{html,body{margin:0;padding:0;}body{overscroll-behavior:none;}main>:first-child{margin-top:0!important;}main>:last-child{margin-bottom:0!important;}}::-webkit-scrollbar{display:none;}</style><script src="https://cdn.tailwindcss.com"></script><script id="tailwind-config">tailwind.config={darkMode:"class",theme:{extend:{"colors":{"secondary-fixed-dim":"#bec6e0","surface-variant":"#d3e4fe","on-secondary":"#ffffff","surface-container-lowest":"#ffffff","background":"#f8f9ff","surface-container-high":"#dce9ff","surface-bright":"#f8f9ff","surface-dim":"#cbdbf5","outline":"#6d7a77","primary-container":"#008378","surface":"#f8f9ff","primary":"#00685f","on-tertiary":"#ffffff","on-background":"#0b1c30","surface-container-highest":"#d3e4fe","error-container":"#ffdad6","outline-variant":"#bcc9c6","error":"#ba1a1a","tertiary":"#006947","secondary-container":"#dae2fd","surface-container":"#e5eeff","tertiary-fixed":"#6ffbbe","inverse-primary":"#6bd8cb","on-secondary-fixed-variant":"#3f465c","on-error-container":"#93000a","primary-fixed-dim":"#6bd8cb","tertiary-fixed-dim":"#4edea3","secondary":"#565e74","surface-tint":"#006a61","inverse-on-surface":"#eaf1ff","on-secondary-fixed":"#131b2e","surface-container-low":"#eff4ff","on-primary":"#ffffff","inverse-surface":"#213145","on-error":"#ffffff","on-tertiary-fixed-variant":"#005236","on-surface":"#0b1c30","on-tertiary-container":"#f5fff6","on-primary-fixed":"#00201d","on-secondary-container":"#5c647a","primary-fixed":"#89f5e7","on-primary-fixed-variant":"#005049","on-surface-variant":"#3d4947","tertiary-container":"#00855b","on-tertiary-fixed":"#002113","secondary-fixed":"#dae2fd","on-primary-container":"#f4fffc"},"borderRadius":{"DEFAULT":"0.25rem","lg":"0.5rem","xl":"0.75rem","full":"9999px"},"spacing":{"gutter":"1.5rem","space-lg":"1.5rem","margin":"2rem","space-sm":"0.5rem","margin-mobile":"1rem","gutter-mobile":"1rem","space-md":"1rem","space-2xl":"3rem","space-xs":"0.25rem","space-xl":"2rem"},"fontFamily":{"title-md":["Inter"],"display-lg":["Plus Jakarta Sans"],"headline-lg-mobile":["Plus Jakarta Sans"],"display-lg-mobile":["Plus Jakarta Sans"],"headline-sm":["Plus Jakarta Sans"],"title-lg":["Inter"],"label-md":["Inter"],"label-sm":["Inter"],"body-lg":["Inter"],"metric-num":["Plus Jakarta Sans"],"headline-lg":["Plus Jakarta Sans"],"body-sm":["Inter"],"headline-md":["Plus Jakarta Sans"],"body-md":["Inter"]},"fontSize":{"title-md":["16px",{"lineHeight":"24px","letterSpacing":"-0.005em","fontWeight":"600"}],"display-lg":["40px",{"lineHeight":"48px","letterSpacing":"-0.025em","fontWeight":"700"}],"headline-lg-mobile":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"display-lg-mobile":["30px",{"lineHeight":"38px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-sm":["20px",{"lineHeight":"28px","letterSpacing":"-0.01em","fontWeight":"600"}],"title-lg":["18px",{"lineHeight":"26px","letterSpacing":"-0.01em","fontWeight":"600"}],"label-md":["12px",{"lineHeight":"16px","letterSpacing":"0.02em","fontWeight":"600"}],"label-sm":["11px",{"lineHeight":"14px","letterSpacing":"0.03em","fontWeight":"600"}],"body-lg":["16px",{"lineHeight":"24px","letterSpacing":"0em","fontWeight":"400"}],"metric-num":["28px",{"lineHeight":"32px","letterSpacing":"-0.02em","fontWeight":"700"}],"headline-lg":["32px",{"lineHeight":"40px","letterSpacing":"-0.02em","fontWeight":"600"}],"body-sm":["13px",{"lineHeight":"18px","letterSpacing":"0.005em","fontWeight":"400"}],"headline-md":["24px",{"lineHeight":"32px","letterSpacing":"-0.015em","fontWeight":"600"}],"body-md":["14px",{"lineHeight":"20px","letterSpacing":"0em","fontWeight":"400"}]}}}};</script><link rel="stylesheet" href="assets/site-global.css">
+<link rel="icon" type="image/svg+xml" href="assets/vitalpulse-favicon.svg"/>
+</head><body class="bg-surface font-body-md text-on-surface antialiased selection:bg-primary-container selection:text-on-primary-container"><aside class="fixed left-0 top-0 h-full w-64 bg-surface-container-low z-50 flex flex-col pt-5 pb-6"><div class="px-6 mb-8 flex items-center gap-3"><img alt="VitalPulse Wellness Logo" class="h-7 w-auto object-contain vp-brand-logo" src="assets/vitalpulse-logo.svg"/><div class="flex flex-col"><span class="font-title-md text-title-md text-on-surface tracking-tight leading-none">VitalPulse</span><span class="font-label-sm text-label-sm text-primary leading-none mt-1">Admin Suite</span></div></div><div class="px-4 mb-3 font-label-sm text-label-sm uppercase tracking-wider text-outline">Operational Views</div><nav class="flex-1 px-3 space-y-1" data-active-classes="bg-secondary-container text-on-secondary-fixed font-semibold"><a class="flex items-center px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="admin-portal" href="#"><span class="material-symbols-outlined text-[20px] mr-3">analytics</span>Admin Overview</a><a aria-current="page" class="flex items-center px-3 py-2.5 rounded-lg transition-colors bg-secondary-container text-on-secondary-fixed font-semibold" data-path="employee-hub" href="#"><span class="material-symbols-outlined text-[20px] mr-3">person_celebrate</span>Employee Hub</a><a class="flex items-center px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="wellness-programs" href="#"><span class="material-symbols-outlined text-[20px] mr-3">health_and_safety</span>Active Programs</a><a class="flex items-center px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="case-studies" href="#"><span class="material-symbols-outlined text-[20px] mr-3">assignment_turned_in</span>Population Outcomes</a><a class="flex items-center px-3 py-2.5 rounded-lg text-on-surface-variant hover:bg-surface-container-high hover:text-on-surface transition-colors" data-path="pricing-plans" href="#"><span class="material-symbols-outlined text-[20px] mr-3">credit_card</span>Plan &amp; Quotas</a></nav><div class="px-3 pt-4"><div class="p-3 rounded-xl bg-surface-container-lowest shadow-[0_1px_3px_0_rgba(15,23,42,0.04)] flex flex-col gap-2"><div class="flex items-center gap-2 text-tertiary font-label-md text-label-md"><span class="material-symbols-outlined text-[18px]">verified</span>Clinical Active</div><p class="font-label-sm text-label-sm text-on-surface-variant">HIPAA enclave connected. Zero employee PII exposed.</p></div></div></aside><div class="pl-64"><header class="fixed top-0 left-64 right-0 h-16 bg-surface-container-lowest/90 backdrop-blur-xl z-40 flex items-center justify-between px-space-md"><div class="flex items-center gap-space-sm"><span class="inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm"><span class="w-1.5 h-1.5 rounded-full bg-primary"></span>Direct HR Command</span></div><div class="flex items-center gap-space-md"><div class="flex items-center h-9 px-3 rounded-lg bg-surface-container-low text-on-surface-variant w-64 gap-2"><span class="material-symbols-outlined text-[18px] text-outline">search</span><input class="w-full bg-transparent border-0 outline-none font-body-sm text-body-sm text-on-surface placeholder:text-outline" placeholder="Filter cohort or metrics..." type="text"/></div><button class="relative p-2 rounded-lg text-on-surface-variant hover:bg-surface-container-low hover:text-on-surface transition-colors" type="button"><span class="material-symbols-outlined text-[20px]">notifications</span><span class="absolute top-1.5 right-1.5 w-2 h-2 rounded-full bg-error ring-2 ring-surface-container-lowest"></span></button><div class="flex items-center gap-space-sm pl-2"><div class="relative"><img alt="Profile" class="w-8 h-8 rounded-full object-cover ring-2 ring-primary/20" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjiDynoLDUiwDX--1RoKPqakW30CX0-DvtsuQlG2plgcxvIz2dFG_CgSiSCHGXc9Ugt_a_17upGOW1EQ9YIdUcm8SCXa5cwlmey6xpNiJTiNWYEtOC438IyMS4i09M9dyFJCbHZW8JWF4Qb4QKfEFtODuyNfnwPBAaUS9WNX5cfbY2F-LL6Q_mn6u0z7i0_tE-NfT2baKjdnzgyzOllU7G0rw0HabVgf7TJ-lFu7faJTMOblM4cw0t"/><span class="absolute bottom-0 right-0 w-2.5 h-2.5 rounded-full bg-tertiary ring-2 ring-surface-container-lowest"></span></div><span class="hidden xl:inline-block font-label-md text-label-md text-on-surface">Sarah Jenkins (HR Director)</span></div></div></header><main class="w-full pt-16 bg-surface min-h-screen px-space-md pb-space-xl"><div class="flex flex-col w-full">
+<div class="max-w-[1440px] mx-auto w-full space-y-space-xl">
+<!-- Top Welcome & Personal Status Bento -->
+<section class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg">
+<!-- Greeting and Quick Overview Banner (8 Cols) -->
+<div class="lg:col-span-8 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm relative overflow-hidden flex flex-col justify-between">
+<div class="absolute -right-12 -top-12 w-64 h-64 rounded-full bg-secondary-container/40 blur-3xl pointer-events-none"></div>
+<div class="absolute right-40 -bottom-10 w-48 h-48 rounded-full bg-primary-fixed/20 blur-2xl pointer-events-none"></div>
+<div class="relative z-10">
+<div class="flex items-center gap-space-xs mb-space-sm">
+<span class="inline-flex items-center gap-1.5 px-3 py-1 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">
+<span class="w-1.5 h-1.5 rounded-full bg-primary animate-pulse"></span>
+              Cohort Level: Pioneer IV
+            </span>
+<span class="font-label-sm text-label-sm text-outline">Sync updated 4m ago</span>
+</div>
+<div class="flex flex-col sm:flex-row sm:items-baseline justify-between gap-space-sm">
+<div>
+<h1 class="font-display-lg text-display-lg text-on-surface tracking-tight">Welcome back, Alex!</h1>
+<p class="font-body-md text-body-md text-on-surface-variant mt-1">You are consistently beating your daily benchmarks. 4 of 5 weekly goals met.</p>
+</div>
+</div>
+</div>
+<div class="grid grid-cols-1 sm:grid-cols-3 gap-space-md mt-space-xl relative z-10">
+<!-- Metric 1: Weekly Steps with SVG Arc -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-md">
+<div class="relative w-14 h-14 flex items-center justify-center shrink-0">
+<svg class="w-14 h-14 -rotate-90" viewbox="0 0 48 48">
+<circle class="stroke-surface-container-high" cx="24" cy="24" fill="none" r="20" stroke-width="4"></circle>
+<circle class="stroke-primary" cx="24" cy="24" fill="none" r="20" stroke-dasharray="125.6" stroke-dashoffset="21.35" stroke-linecap="round" stroke-width="4"></circle>
+</svg>
+<span class="material-symbols-outlined absolute text-primary text-[20px]" style="font-variation-settings: 'FILL' 1;">directions_walk</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Weekly Steps</span>
+<div class="font-metric-num text-metric-num text-on-surface leading-none mt-0.5">12,450</div>
+<span class="font-body-sm text-body-sm text-tertiary flex items-center gap-0.5 mt-1 font-semibold">
+<span class="material-symbols-outlined text-[14px]">arrow_upward</span> 83% of 15k goal
+              </span>
+</div>
+</div>
+<!-- Metric 2: Vitality Score -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-tertiary-fixed/40 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary text-[24px]">vital_signs</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Vitality Score</span>
+<div class="flex items-baseline gap-1 mt-0.5">
+<span class="font-metric-num text-metric-num text-on-surface leading-none">84</span>
+<span class="font-body-sm text-body-sm text-outline">/100</span>
+</div>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary mt-1">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Thriving Category
+              </span>
+</div>
+</div>
+<!-- Metric 3: Points Balance -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex items-center gap-space-md">
+<div class="w-14 h-14 rounded-xl bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary text-[24px]">stars</span>
+</div>
+<div class="min-w-0">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-outline block">Points Wallet</span>
+<div class="font-metric-num text-metric-num text-primary leading-none mt-0.5">1,850 <span class="font-label-md text-label-md text-on-surface-variant font-normal">pts</span></div>
+<span class="font-body-sm text-body-sm text-on-surface-variant mt-1 block truncate">~$45.00 cash value</span>
+</div>
+</div>
+</div>
+</div>
+<!-- Quick Action / Readiness Radar Widget (4 Cols) -->
+<div class="lg:col-span-4 bg-primary text-on-primary rounded-xl p-space-xl shadow-md flex flex-col justify-between relative overflow-hidden">
+<div class="absolute right-0 bottom-0 translate-x-8 translate-y-8 w-44 h-44 rounded-full bg-primary-container/40 pointer-events-none"></div>
+<div>
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm uppercase tracking-widest text-primary-fixed">Clinical Readiness</span>
+<span class="material-symbols-outlined text-primary-fixed">verified_user</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-primary mt-space-sm">Optimal Recovery Zone</h2>
+<p class="font-body-sm text-body-sm text-primary-fixed-dim mt-space-xs leading-relaxed">
+            Your resting heart rate has normalized at 58 bpm. Ideal condition for high-focus tasks and light cardio.
+          </p>
+</div>
+<div class="pt-space-lg space-y-space-sm">
+<div class="bg-primary-container/60 backdrop-blur-sm rounded-lg p-space-sm flex items-center justify-between text-on-primary">
+<div class="flex items-center gap-space-sm">
+<span class="material-symbols-outlined text-[18px]">bedtime</span>
+<span class="font-body-sm text-body-sm">Circadian Quality</span>
+</div>
+<span class="font-label-md text-label-md text-tertiary-fixed">92% Sound</span>
+</div>
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary-fixed text-on-primary-fixed font-title-md text-title-md hover:bg-white transition-colors flex items-center justify-center gap-2" type="button">
+<span>Log Midday Focus Check</span>
+<span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+</button>
+</div>
+</div>
+</section>
+<!-- Daily Habit Logger & Quick Input Matrix -->
+<section class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm">
+<div class="flex flex-col md:flex-row md:items-center justify-between mb-space-lg gap-space-sm">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Real-time Biometrics</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Habit Tracker &amp; Daily Check-in</h2>
+</div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm text-outline">Streak:</span>
+<div class="inline-flex items-center gap-1 px-3 py-1 bg-tertiary-container/10 text-tertiary rounded-full font-label-md text-label-md font-bold">
+<span class="material-symbols-outlined text-[16px]" style="font-variation-settings: 'FILL' 1;">local_fire_department</span>
+            14 Days Active
+          </div>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-space-md">
+<!-- Habit 1: Mood Check-in -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Daily Energy &amp; Mood</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">psychology</span>
+</div>
+<div class="my-space-md">
+<div class="flex justify-between items-center bg-surface-container-lowest rounded-lg p-1.5">
+<button class="p-2 rounded hover:bg-surface-container-high transition-colors text-outline hover:text-on-surface" title="Low Energy" type="button">
+<span class="material-symbols-outlined text-[24px]">sentiment_dissatisfied</span>
+</button>
+<button class="p-2 rounded hover:bg-surface-container-high transition-colors text-outline hover:text-on-surface" title="Balanced" type="button">
+<span class="material-symbols-outlined text-[24px]">sentiment_neutral</span>
+</button>
+<button class="p-2 rounded bg-primary-fixed text-on-primary-fixed shadow-sm" title="Focused &amp; Vibrant" type="button">
+<span class="material-symbols-outlined text-[24px]" style="font-variation-settings: 'FILL' 1;">sentiment_very_satisfied</span>
+</button>
+<button class="p-2 rounded hover:bg-surface-container-high transition-colors text-outline hover:text-on-surface" title="Peak Output" type="button">
+<span class="material-symbols-outlined text-[24px]">bolt</span>
+</button>
+</div>
+</div>
+<span class="font-label-sm text-label-sm text-primary font-medium">Logged as Vibrant at 09:15 AM</span>
+</div>
+<!-- Habit 2: Water Logger -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Hydration Tracker</span>
+<span class="material-symbols-outlined text-primary text-[20px]">water_drop</span>
+</div>
+<div class="my-space-sm flex items-center justify-between">
+<div>
+<span class="font-metric-num text-metric-num text-on-surface" id="water-val">2,100</span>
+<span class="font-body-sm text-body-sm text-outline">/ 2,800 ml</span>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary font-label-md text-label-md font-bold">
+              75%
+            </div>
+</div>
+<div class="flex gap-2">
+<button class="flex-1 py-1.5 px-2 bg-surface-container-lowest hover:bg-primary-fixed hover:text-on-primary-fixed rounded text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center justify-center gap-1" onclick="logWater(250)" type="button">
+              +250ml
+            </button>
+<button class="flex-1 py-1.5 px-2 bg-surface-container-lowest hover:bg-primary-fixed hover:text-on-primary-fixed rounded text-on-surface font-label-sm text-label-sm font-semibold transition-colors flex items-center justify-center gap-1" onclick="logWater(500)" type="button">
+              +500ml
+            </button>
+</div>
+</div>
+<!-- Habit 3: Sleep Tracker -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Sleep Rest Log</span>
+<span class="material-symbols-outlined text-secondary text-[20px]">bed</span>
+</div>
+<div class="my-space-sm flex items-baseline justify-between">
+<div>
+<span class="font-metric-num text-metric-num text-on-surface">7h 45m</span>
+<span class="font-body-sm text-body-sm text-tertiary block font-medium">+30m vs last week</span>
+</div>
+<span class="material-symbols-outlined text-tertiary text-[28px]">check_circle</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 90%;"></div>
+</div>
+</div>
+<!-- Habit 4: Quick Reflection Prompt -->
+<div class="bg-surface-container-low rounded-xl p-space-md flex flex-col justify-between">
+<div class="flex items-center justify-between">
+<span class="font-label-md text-label-md text-on-surface-variant">Daily Reflection</span>
+<span class="material-symbols-outlined text-outline text-[20px]">edit_note</span>
+</div>
+<div class="my-space-xs">
+<input class="w-full text-body-sm font-body-sm p-2 bg-surface-container-lowest rounded-lg border-0 outline-none placeholder:text-outline text-on-surface focus:ring-1 focus:ring-primary" placeholder="One win today..." type="text"/>
+</div>
+<button class="w-full py-1.5 text-center bg-secondary text-on-secondary rounded-lg font-label-sm text-label-sm hover:bg-on-surface transition-colors" type="button">
+            Save Entry (+15 Pts)
+          </button>
+</div>
+</div>
+</section>
+<!-- Mid Section: Active Challenges & Scheduled Consultations Grid (Bento) -->
+<div class="grid grid-cols-1 lg:grid-cols-12 gap-space-lg items-start">
+<!-- Active Personal Challenges & Goals (7 Cols) -->
+<section class="lg:col-span-7 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg">
+<div class="flex items-center justify-between">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Programs In Progress</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Active Health Quests</h2>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline flex items-center gap-1" href="#">
+            Browse All (8) <span class="material-symbols-outlined text-[16px]">chevron_right</span>
+</a>
+</div>
+<div class="space-y-space-md">
+<!-- Challenge 1 -->
+<div class="bg-surface-container-low rounded-xl p-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-primary-fixed/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-primary">water</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">30-Day Hydration Hero</h3>
+<span class="font-body-sm text-body-sm text-outline">Target: 2.5L everyday for 30 consecutive days</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-container font-label-sm text-label-sm shrink-0">
+                12 Days Left
+              </span>
+</div>
+<div class="space-y-1 mt-space-md">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Progress: Day 18 of 30</span>
+<span class="font-semibold text-primary">60% Completed</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full transition-all duration-500" style="width: 60%"></div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between text-body-sm font-body-sm text-outline pt-space-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-tertiary">card_giftcard</span> Next Reward: 250 Points</span>
+<span class="text-on-surface font-label-sm text-label-sm font-medium">Next Milestone: Day 20</span>
+</div>
+</div>
+<!-- Challenge 2 -->
+<div class="bg-surface-container-low rounded-xl p-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-tertiary-fixed/50 flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-tertiary">self_improvement</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Mindful Moments (5 min/day)</h3>
+<span class="font-body-sm text-body-sm text-outline">Micro-meditation break before post-lunch fatigue</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-tertiary-container/10 text-tertiary font-label-sm text-label-sm shrink-0">
+                On Track
+              </span>
+</div>
+<div class="space-y-1 mt-space-md">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Weekly goal: 5 of 5 days</span>
+<span class="font-semibold text-tertiary">100% (Week 3)</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-tertiary h-full rounded-full" style="width: 100%"></div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between text-body-sm font-body-sm text-outline pt-space-xs">
+<span class="flex items-center gap-1"><span class="material-symbols-outlined text-[16px] text-primary">verified</span> Streak Protected</span>
+<button class="font-label-sm text-label-sm text-primary hover:underline font-semibold" type="button">Start Today's Audio</button>
+</div>
+</div>
+<!-- Challenge 3: Team Step Challenge -->
+<div class="bg-surface-container-low rounded-xl p-space-md hover:bg-surface-container-high transition-colors">
+<div class="flex items-start justify-between gap-space-sm mb-space-sm">
+<div class="flex items-center gap-3">
+<div class="w-10 h-10 rounded-lg bg-secondary-container flex items-center justify-center shrink-0">
+<span class="material-symbols-outlined text-secondary">groups</span>
+</div>
+<div>
+<h3 class="font-title-md text-title-md text-on-surface">Engineering vs Product Step-Off</h3>
+<span class="font-body-sm text-body-sm text-outline">Q3 Corporate Inter-department Challenge</span>
+</div>
+</div>
+<span class="px-2.5 py-1 rounded-full bg-secondary-container text-on-secondary-fixed font-label-sm text-label-sm shrink-0">
+                Rank #2 of 14
+              </span>
+</div>
+<div class="space-y-1 mt-space-md">
+<div class="flex justify-between font-label-sm text-label-sm text-on-surface-variant">
+<span>Team Total: 342,800 steps</span>
+<span class="font-semibold text-on-surface">Target: 400,000</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-2 overflow-hidden">
+<div class="bg-primary h-full rounded-full" style="width: 85%"></div>
+</div>
+</div>
+<div class="mt-space-sm flex items-center justify-between text-body-sm font-body-sm text-outline pt-space-xs">
+<span>Your Contribution: 12,450 steps</span>
+<span class="text-tertiary font-label-sm text-label-sm font-semibold">Closes in 48 hours</span>
+</div>
+</div>
+</div>
+</section>
+<!-- Upcoming Scheduled Sessions & Clinical Appointments (5 Cols) -->
+<section class="lg:col-span-5 bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg">
+<div>
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Care Coordination</span>
+<h2 class="font-headline-sm text-headline-sm text-on-surface">Upcoming Sessions</h2>
+</div>
+<div class="space-y-space-md">
+<!-- Session 1: 1-on-1 Nutritionist -->
+<div class="bg-surface-container-low rounded-xl p-space-md relative overflow-hidden">
+<div class="flex items-start gap-space-md">
+<img class="w-12 h-12 rounded-full object-cover shrink-0 ring-2 ring-primary/20" data-alt="A professional registered dietitian nutritionist smiling warmly in a clinical video consultation office with natural light and health books in background, highly professional aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAnnv2FGyDV1W-Hie_en8hTQKEbEtKUDDOCenRM2Uc7kRW4Y2D_RUQ-gdLMG204hkgXz1Ob5oxI4CGgTD8zusunSJ4fmEewJ_VywXJxXL2x-oEfUTmyITAIg3odjrG16B41ylVa7PH-stAOoQVu_Jw66Z7ekHIA_TLdei4B6mNpWup7B9iTsqOT_CDhl2XjfmMt9JIucWF_FtYqXPP7pfULxZPXcwxVbFxQZU2Pby1ggPmFzZ2jDYwp"/>
+<div class="min-w-0 flex-1">
+<div class="flex items-center justify-between">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Video Consultation</span>
+<span class="inline-flex items-center gap-1 font-label-sm text-label-sm text-tertiary">
+<span class="w-1.5 h-1.5 rounded-full bg-tertiary"></span> Confirmed
+                  </span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface mt-0.5 truncate">Dr. Elena Rostova, MS, RD</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant">Metabolic Nutrition &amp; Gut Optimization</p>
+<div class="flex items-center gap-2 mt-2 text-on-surface font-label-md text-label-md bg-surface-container-lowest px-3 py-1.5 rounded-lg w-fit">
+<span class="material-symbols-outlined text-[18px] text-primary">calendar_today</span>
+                  Thursday, Oct 17 • 2:00 PM EST
+                </div>
+<div class="flex gap-2 mt-space-md">
+<button class="flex-1 py-2 px-3 bg-primary text-on-primary rounded-lg font-label-md text-label-md hover:bg-primary-container transition-colors flex items-center justify-center gap-1.5" type="button">
+<span class="material-symbols-outlined text-[16px]">videocam</span> Join Call
+                  </button>
+<button class="py-2 px-3 bg-surface-container-highest text-on-surface rounded-lg font-label-md text-label-md hover:bg-outline-variant transition-colors" type="button">
+                    Reschedule
+                  </button>
+</div>
+</div>
+</div>
+</div>
+<!-- Session 2: On-site Biometrics Barcode Ticket -->
+<div class="bg-surface-container-low rounded-xl p-space-md relative">
+<div class="flex items-center justify-between mb-2">
+<span class="font-label-sm text-label-sm text-secondary uppercase font-bold tracking-wider">On-Site Clinic</span>
+<span class="px-2 py-0.5 rounded bg-surface-container-high font-label-sm text-label-sm text-on-surface-variant">Building 4, Rm 202</span>
+</div>
+<h3 class="font-title-md text-title-md text-on-surface">Annual Biometric Health Screening</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-0.5">Comprehensive lipid panel, HbA1c, and vitals check.</p>
+<div class="mt-space-md p-space-sm bg-surface-container-lowest rounded-lg flex flex-col sm:flex-row items-center justify-between gap-space-md">
+<div class="space-y-0.5 text-center sm:text-left">
+<span class="font-label-sm text-label-sm text-outline block">Appointment Code</span>
+<span class="font-title-md text-title-md text-on-surface font-mono">VP-8829-FLX</span>
+<span class="font-body-sm text-body-sm text-tertiary block">Next Mon, 08:30 AM</span>
+</div>
+<!-- Barcode Mockup -->
+<div class="bg-white p-2 rounded flex flex-col items-center shrink-0">
+<div class="flex items-center gap-0.5 h-9">
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1.5 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-2 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1.5 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+<div class="w-1 h-full bg-on-surface"></div>
+<div class="w-2 h-full bg-on-surface"></div>
+<div class="w-0.5 h-full bg-on-surface"></div>
+</div>
+<span class="font-label-sm text-[9px] text-outline mt-1 font-mono tracking-widest">SCAN AT CHECK-IN</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+</div>
+<!-- Wellness Rewards Storefront Section -->
+<section class="bg-surface-container-lowest rounded-xl p-space-xl shadow-sm space-y-space-lg">
+<div class="flex flex-col sm:flex-row sm:items-center justify-between gap-space-sm">
+<div>
+<div class="flex items-center gap-2">
+<span class="font-label-sm text-label-sm uppercase tracking-wider text-primary font-bold">Incentive Marketplace</span>
+<span class="px-2 py-0.5 rounded-full bg-primary-fixed text-on-primary-fixed font-label-sm text-label-sm">Balance: 1,850 Pts</span>
+</div>
+<h2 class="font-headline-sm text-headline-sm text-on-surface mt-1">Rewards &amp; Benefits Storefront</h2>
+</div>
+<div class="flex items-center gap-2">
+<button class="py-2 px-3 rounded-lg bg-surface-container-high text-on-surface font-label-md text-label-md hover:bg-surface-variant transition-colors" type="button">
+            All Items
+          </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+            Gift Cards
+          </button>
+<button class="py-2 px-3 rounded-lg bg-surface-container-low text-on-surface-variant font-label-md text-label-md hover:bg-surface-container-high transition-colors" type="button">
+            Fitness Gear
+          </button>
+</div>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-space-lg">
+<!-- Reward 1: Amazon Gift Card -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A clean modern digital gift voucher mockup for online corporate wellness rewards displayed against an elegant minimalist teal and mint green studio setting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAhiuhWSNrKMmECScnMAZJPY7Md49hKcKTUyQP7PfMQ_5qkqKEoGRBJbCZhpjp8hG74ZUNOvwEjb6ujILLWVWQtANI3uqOMftUwYGSEFYB8cpXOg70DS4CiRhCnXJ2i6QIRNptwhq5YrMl8qnzOM2qCehIz78Lbs4ybojAgt_O26TGXoO97GNqWlqQcB0ghMZKronqv7TM3_CsXzefv-p5rPfFkvQVuzQajEwfL7ONc_mUwQ14NjYKH"/>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-on-surface font-bold">
+              Instant Delivery
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-primary font-semibold">Digital eCard</span>
+<span class="font-title-md text-title-md text-primary font-bold">1,250 Pts</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">$50 Amazon Corporate Gift Card</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Direct voucher code sent instantly to your corporate work inbox.</p>
+</div>
+<div class="mt-space-md pt-space-sm">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2" onclick="redeemReward('$50 Amazon Gift Card')" type="button">
+<span>Redeem Reward</span>
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Reward 2: Headspace/Calm App Subscription -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A smartphone on a clean wooden desk showing a serene meditation and mindfulness health dashboard with soft plant leaves in the background, elegant photography." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDf0pRIVuJHUKpggRGT2wh9zRWyaMuUjteIpbZc8DM1DSpBIGahZDmg6rkA5PHCWDNVA0E-TCJFR428Kwyt3vLcQO_qHEDN_RFTYytkmb7j1PkGhQ1xAFEBC0siQrPKUl_phx0rPuDRH3yzMUVLHEPeeQD5rjWD0NKKMZmKA_yt-Dj9ZU5YoxUMqp5gV92W2D20rIBNPjD1BFtfLJslB83mxcveZ_bVGkZjoEGR7gamX7AMYz8-jpdW"/>
+<span class="absolute top-3 right-3 bg-tertiary-fixed text-on-tertiary-fixed px-2.5 py-1 rounded-full font-label-sm text-label-sm font-bold">
+              Company Match
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-tertiary font-semibold">1-Year Subscription</span>
+<span class="font-title-md text-title-md text-primary font-bold">800 Pts</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">Premium Meditation App Pass</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Full 12-month access to guided sleep soundscapes, stress relief, and breathing tools.</p>
+</div>
+<div class="mt-space-md pt-space-sm">
+<button class="w-full py-2.5 px-4 rounded-lg bg-primary text-on-primary font-title-md text-title-md hover:bg-primary-container transition-colors flex items-center justify-center gap-2" onclick="redeemReward('Premium Meditation Pass')" type="button">
+<span>Redeem Reward</span>
+<span class="material-symbols-outlined text-[18px]">shopping_bag</span>
+</button>
+</div>
+</div>
+</div>
+<!-- Reward 3: Noise Cancelling Headphones -->
+<div class="bg-surface-container-low rounded-xl overflow-hidden flex flex-col justify-between group hover:shadow-md transition-shadow">
+<div class="relative h-44 w-full overflow-hidden bg-surface-container-high">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="Premium sleek wireless noise-cancelling headphones resting on a stone pedestal with soft clinical teal studio lighting and clean minimalist styling." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBLzYiliCthA9IYCzwGZDv7A4U3xIiEi2PhN1X53D-u2wol5GLyyE0EFthJpDUXBl1RKpp-XzYWLNY0b9fhB0sQ_bXSCCGe8TBAl-cQ4dIB02v5rLgvtyhS0mYU4G4ZJqDiP_rrSw62YJjHx-UlQ9QUpERG7Y75s0TFzy5X-oPnU2V4gCxD239rzMI4KNb6dpoH6uNpH8H8r3PVUyJ01onKb7GZszmp4tBg4GUcnbeeavk0e995xh_K"/>
+<span class="absolute top-3 right-3 bg-surface-container-lowest/90 backdrop-blur-md px-2.5 py-1 rounded-full font-label-sm text-label-sm text-outline font-medium">
+              Physical Shipped
+            </span>
+</div>
+<div class="p-space-md flex-1 flex flex-col justify-between">
+<div>
+<div class="flex items-center justify-between mb-1">
+<span class="font-label-sm text-label-sm text-secondary font-semibold">Hardware Tech</span>
+<span class="font-title-md text-title-md text-on-surface font-bold">3,500 Pts</span>
+</div>
+<h3 class="font-title-lg text-title-lg text-on-surface">ANC Wireless Headphones</h3>
+<p class="font-body-sm text-body-sm text-on-surface-variant mt-1">Deep focus acoustic noise reduction designed for busy corporate offices and remote work.</p>
+</div>
+<div class="mt-space-md pt-space-sm">
+<div class="space-y-1.5">
+<div class="flex justify-between font-label-sm text-label-sm text-outline">
+<span>Your Balance: 1,850</span>
+<span>Need 1,650 more</span>
+</div>
+<div class="w-full bg-surface-container-highest rounded-full h-1.5 overflow-hidden">
+<div class="bg-secondary-fixed-dim h-full rounded-full" style="width: 52%"></div>
+</div>
+<button class="w-full py-2.5 px-4 rounded-lg bg-surface-container-high text-outline cursor-not-allowed font-title-md text-title-md flex items-center justify-center gap-2 mt-2" disabled="" type="button">
+<span class="material-symbols-outlined text-[18px]">lock</span> 52% Saved
+                </button>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Bottom Compliance & Discretion Note -->
+<footer class="p-space-md rounded-xl bg-surface-container-low flex flex-col sm:flex-row items-center justify-between gap-space-md text-outline">
+<div class="flex items-center gap-space-sm text-body-sm">
+<span class="material-symbols-outlined text-primary text-[20px]">lock</span>
+<span>Your personal health activity logs remain strictly confidential under HIPAA Safe Harbor protocols. Your employer only receives aggregated cohort analytics.</span>
+</div>
+<a class="font-label-md text-label-md text-primary hover:underline shrink-0" href="#">Privacy &amp; Disclosures</a>
+</footer>
+</div>
+</div>
+<script>
+  function logWater(amount) {
+    const el = document.getElementById('water-val');
+    if (!el) return;
+    let current = parseInt(el.innerText.replace(/,/g, ''), 10) || 0;
+    current += amount;
+    el.innerText = current.toLocaleString();
+  }
+
+  function redeemReward(itemName) {
+    alert('Congratulations! You redeemed: ' + itemName + '. Instructions have been sent to your work email.');
+  }
+</script></main></div><script src="assets/site-global.js"></script>
+</body></html>
